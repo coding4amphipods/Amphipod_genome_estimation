@@ -1,0 +1,17 @@
+Analysis & Estimation
+.fcs files were imported and managed in Rstudio using the R package [flowPloidy](https://github.com/plantarum/flowPloidy) (Smith et al., 2018). Using flowPloidy's shiny R interface, which displays data histograms, G1peaks of amphipod and chicken were identified. Chicken G1 peaks were confirmed using the invidulal CRBC sample. Each amphipod sample genome estimation was calculated on non-gated and gated populations. Gated samples were gated using a SSC-H/YL2.H y-axis and YL2.H x-axis where singlet nuclei populations were gated using a rectangular gate. Genome size estimations were conducted on non-gated and gated data, with estimations not significantly differing in size between treatments. Size estimations were found to be around a half gigabyte: .50-.60pg c-value (.48-.59Gb).
+
+Analysis Rscript
+```r
+library(flowPloidy)
+?flowPloidy #can find more information in manual
+#set working directory
+# MY DATA ----
+my.fscfiles <- list.files("/path/to/your/fcs/files", full.names = TRUE) # import files My.fscfiles #check names
+#what is my fluorscent channel? check one file for names & check flow cytometer viewFlowChannels("/path/to/your/fcs/files/X.fcs")
+# will use YL2.H since that is my fluorescent stain. Didn't include standard in test samples.
+batch8 <- batchFlowHist(my.fscfiles, channel = "YL2.H", standards = 1.25 ) #chicken is 1.25 batch8 <- browseFlowHist(batch8)
+results <- tabulateFlowHist(batch8)
+results <- tabulateFlowHist(batch8, file = "filename_flow_results.csv")
+...
+```

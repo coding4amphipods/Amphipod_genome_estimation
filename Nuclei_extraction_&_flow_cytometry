@@ -1,0 +1,24 @@
+Genome Size Estimation on amphipod Sunamphitoe humeralis 
+Siena McKim with help from Joel Sharbrough
+
+Final Experiment (3/20/25)
+Tissue selection: Live amphipod was dissected for different tissue types: A. head B. anterior half of the body minus legs C. posterior half of the body minus legs D1: Left legs D2: right legs E: babies (~15 individuals pooled).
+Nuclei Isolation Buffer: Galbraith buffer (Galbraith et al. 1983)
+To make 50mL: Dissolve and vortex .214g MgCl2, .441g Sodium Citrate, .209g MOPS Sodium Salt in 50mL of DI water and then add 50uL Triton X-100, 50mL of DI into the solution. Ph should be 7. I did not need to but if you need to adjust the pH you can use NaOH or HCL.
+Internal standard: chicken (Gallus domesticus) red blood cells, erythrocytes (CRBC) 1.25pg
+If starting with whole blood take 1mL of wholeblood and 1mL of buffer and centrifuge at 400g for 7 minutes, seperating the cells from plasma and buffy coat. Remove supernatant and add 1mL of buffer. Centrifuge at 400g for 5 minutes and remove supernatant. Now you have CRBC that can be used as a standard. For longer term storage, store CRBC in PBS. Some protocols call for grinding CRBC in a Kontes dounce tissue grinder, but this tends to create more debris and is not necessary.
+DNA Stain: Propidium Iodide + buffer
+Per sample, 150uL of DNA stain is to be added. To make 150uL, 1.5uL of 100x PI DNA stain is added to 148.5uL of buffer. Multiply each component by the number of samples to make a DNA stain stock.
+Nuclei extraction & staining protocol (based off of protocols in Bennett et al., 2003, Reese et al., 2007, Jeffery et al., 2016 & Ritchie et al., 2018)
+1. Drop dissected tissue into 500uL of ice cold Galbraith buffer (grab from the -20 freezer just before starting).
+2. Homogenize tissue using an A pestle in a Kontes Dounce tissue grinder, douncing up and down 15 times, twisting only to the right once when pestle on the bottom. Do not have on ice when grinding.
+3. Incubate homogenized tissue at room temperature for 15 - 21 minutes, shaking gently every 3 minutes.
+4. Filter tube contents through a 40um nylon mesh. If using a wide mesh, filter ontop of a weight boat and then pour filtered contents into a 1.5mL tube.
+5. Centrifuge tubes at 500g for 10 minutes. Remove supernatants which contain lighter cellular debris and keep heavier pellets (hopefully nuclei) on the tube bottom.
+6. For amphipod tubes, 2uL of 100% CRBC were added as an internal standard to be co-stained. For the CRBC standard sample, 5uL of 100% CRBC was added to its own tubes.
+   
+7. Add 150uL of DNA stain to every tube. Quickly vortex tubes to suspend nuclei and leave in a dark, 4° fridge for 30 minutes.
+8. Centrifuge tubes at 5000g for 20 seconds. Remove supertant careful not to disturb the nuclei pellets.
+9. Add 500uL of 1x PBS and store in the fridge until flow cytometry. Remember to vortex samples quickly right before flowing.
+Flow Cytometry Settings
+Samples were flowed on a Thermo Fisher Invitrogen Attune NxT flow cytometer in the Richardson Lab at UCSB. 200uL of each sample was acquired (250uL total volume drawn) at 200uL/minute. A 561nm laser with 620/15 filter and a voltage of 450 for the YL2 channel was used to detect PI fluorescently stained nuclei. FSC voltage was set at 60 and SSC voltage was set at 340. Two instrament rinses were performed between sample readings, and samples were quickly vortexed before flowing. At least 100,000 events were recorded per sample. Each sample was flowed twice creating 2 technical replicates per tissue type. Fcs files were exported for analysis in R
